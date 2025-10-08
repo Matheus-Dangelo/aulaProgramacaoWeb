@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Como Doar - ONG UBM - Unidos por um Bairro Melhor</title>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <h1>ONG UBM - Unidos por um Bairro Melhor</h1>
+    <nav>
+      <ul>
+        <li><a href="/index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="voluntariado.html">Voluntariado</a></li>
+        <li><a href="doacoes.html">Doações</a></li>
+        <li><a href="transparencia.html">Transparência</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main>
+    <section>
+      <h2>Como Contribuir</h2>
+      <p>Suas doações ajudam a transformar vidas! Escolha uma forma de contribuir com nossos projetos.</p>
+
+      <ul>
+        <li>💳 Doação via cartão de crédito</li>
+        <li>🏦 Transferência bancária</li>
+        <li>📦 Doação de bens e mantimentos</li>
+        <li>🤝 Parcerias empresariais</li>
+      </ul>
+    </section>
+
+    <!-- Formulário de doação -->
+    <section>
+      <h2>Formulário de Doação</h2>
+
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Dados do Doador</legend>
+
+          <label for="nome">Nome completo:</label>
+          <input type="text" id="nome" name="nome" required>
+
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="cpf">CPF:</label>
+          <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required>
+
+          <label for="telefone">Telefone:</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+        </fieldset>
+
+        <fieldset>
+          <legend>Detalhes da Doação</legend>
+
+          <label>Tipo de doação:</label>
+          <label><input type="radio" name="tipo" value="unica" required> Única</label>
+          <label><input type="radio" name="tipo" value="mensal"> Mensal</label>
+
+          <label for="valor">Valor (R$):</label>
+          <input type="number" id="valor" name="valor" min="10" step="5" required>
+
+          <label for="formaPagamento">Forma de pagamento:</label>
+          <select id="formaPagamento" name="formaPagamento" required>
+            <option value="">Selecione...</option>
+            <option value="cartao">Cartão de Crédito</option>
+            <option value="pix">PIX</option>
+            <option value="boleto">Boleto Bancário</option>
+          </select>
+
+          <label for="mensagem">Mensagem (opcional):</label>
+          <textarea id="mensagem" name="mensagem" rows="3" placeholder="Deixe uma mensagem para nossa equipe..."></textarea>
+        </fieldset>
+
+        <button type="submit">Concluir Doação</button>
+      </form>
+    </section>
+
+    <!-- Seção de vídeo e agradecimento -->
+    <section>
+      <h2>Veja o impacto da sua contribuição</h2>
+      <video controls width="640" poster="../assets/imagens/thumb-doacao.jpg">
+        <source src="../assets/videos/impacto_donativo.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+      </video>
+
+      <p>Obrigado por acreditar em nossa missão!</p>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 ONG UBM - Unidos por um Bairro Melhor - Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>

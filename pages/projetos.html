@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projetos Sociais - ONG UBM - Unidos por um Bairro Melhor</title>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <h1>ONG UBM - Unidos por um Bairro Melhor</h1>
+    <nav>
+      <ul>
+        <li><a href="/index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="voluntariado.html">Voluntariado</a></li>
+        <li><a href="doacoes.html">Doações</a></li>
+        <li><a href="transparencia.html">Transparência</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main>
+    <section>
+      <h2>Projetos Sociais em Andamento</h2>
+      <p>Conheça alguns dos projetos que fazem a diferença na vida de muitas pessoas.</p>
+
+      <!-- Galeria de imagens dos projetos -->
+      <section>
+        <h3>Galeria de Fotos</h3>
+        <!-- Usando picture e lazy loading -->
+        <div>
+          <picture>
+            <source srcset="../assets/imagens/projeto1.webp" type="image/webp">
+            <img src="../assets/imagens/projeto1.jpg" alt="Projeto de Educação" loading="lazy">
+          </picture>
+
+          <picture>
+            <source srcset="../assets/imagens/projeto2.webp" type="image/webp">
+            <img src="../assets/imagens/projeto2.jpg" alt="Projeto de Alimentação" loading="lazy">
+          </picture>
+
+          <picture>
+            <source srcset="../assets/imagens/projeto3.webp" type="image/webp">
+            <img src="../assets/imagens/projeto3.jpg" alt="Projeto Ambiental" loading="lazy">
+          </picture>
+
+          <!-- Adicione até 20 imagens no total -->
+        </div>
+      </section>
+    </section>
+
+    <!-- Seção de inscrição em projetos -->
+    <section>
+      <h2>Inscreva-se em um Projeto</h2>
+      <p>Se você deseja participar de um de nossos projetos, preencha o formulário abaixo:</p>
+
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Informações Pessoais</legend>
+
+          <label for="nome">Nome completo:</label>
+          <input type="text" id="nome" name="nome" required>
+
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="telefone">Telefone:</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+        </fieldset>
+
+        <fieldset>
+          <legend>Informações do Projeto</legend>
+
+          <label for="projeto">Selecione o projeto:</label>
+          <select id="projeto" name="projeto" required>
+            <option value="">Escolha...</option>
+            <option value="educacao">Educação para Todos</option>
+            <option value="alimentacao">Alimente Esperança</option>
+            <option value="meioambiente">Verde Vivo</option>
+          </select>
+
+          <label for="motivacao">Por que deseja participar?</label>
+          <textarea id="motivacao" name="motivacao" rows="4" required></textarea>
+
+          <label for="experiencia">Possui experiência prévia?</label>
+          <textarea id="experiencia" name="experiencia" rows="3" placeholder="Descreva brevemente..."></textarea>
+        </fieldset>
+
+        <button type="submit">Enviar inscrição</button>
+      </form>
+    </section>
+
+    <!-- Seção multimídia -->
+    <section>
+      <h2>Vídeo Institucional</h2>
+      <video controls width="640" poster="../assets/imagens/thumb-video.jpg">
+        <source src="../assets/videos/video_institucional.mp4" type="video/mp4">
+        Seu navegador não suporta o elemento de vídeo.
+      </video>
+    </section>
+
+    <!-- Seção de gráficos (canvas placeholders) -->
+    <section>
+      <h2>Impacto dos Projetos</h2>
+      <p>Veja os resultados de nossas ações sociais:</p>
+
+      <!-- Gráficos serão implementados futuramente com JavaScript -->
+      <canvas id="graficoRecursos" width="400" height="300">Gráfico de distribuição de recursos</canvas>
+      <canvas id="graficoVoluntarios" width="400" height="300">Gráfico de evolução de voluntários</canvas>
+      <canvas id="graficoRegioes" width="400" height="300">Gráfico de impacto por região</canvas>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 ONG UBM - Unidos por um Bairro Melhor - Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
