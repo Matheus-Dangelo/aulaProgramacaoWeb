@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - ONG - UBM - Unidos por um Bairro Melhor</title>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <h1>ONG - UBM - Unidos por um Bairro Melhor</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Início</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="voluntariado.html">Voluntariado</a></li>
+        <li><a href="doacoes.html">Doações</a></li>
+        <li><a href="transparencia.html">Transparência</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main>
+    <section>
+      <h2>Entre em Contato Conosco</h2>
+      <p>Use o formulário abaixo para enviar sua mensagem à equipe da ONG - UBM.</p>
+
+      <!-- Formulário de contato -->
+      <form action="#" method="post" enctype="multipart/form-data">
+        <fieldset>
+          <legend>Informações de Contato</legend>
+
+          <label for="nome">Nome completo:</label>
+          <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
+
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com">
+
+          <label for="telefone">Telefone:</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+        </fieldset>
+
+        <fieldset>
+          <legend>Mensagem</legend>
+
+          <label for="assunto">Assunto:</label>
+          <select id="assunto" name="assunto" required>
+            <option value="">Selecione...</option>
+            <option value="duvidas">Dúvidas</option>
+            <option value="parcerias">Parcerias</option>
+            <option value="doacoes">Doações</option>
+            <option value="outros">Outros</option>
+          </select>
+
+          <label for="mensagem">Mensagem:</label>
+          <textarea id="mensagem" name="mensagem" rows="6" required placeholder="Digite sua mensagem aqui..."></textarea>
+
+          <label for="anexo">Anexar arquivo (opcional):</label>
+          <input type="file" id="anexo" name="anexo" accept=".pdf,.jpg,.png,.docx">
+        </fieldset>
+
+        <p>
+          <input type="checkbox" id="privacidade" name="privacidade" required>
+          <label for="privacidade">Concordo com a política de privacidade da ONG - UBM.</label>
+        </p>
+
+        <button type="submit">Enviar mensagem</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Informações Institucionais</h2>
+      <p><strong>Endereço:</strong> Rua Esperança, 100 - São Paulo/SP</p>
+      <p><strong>Telefone:</strong> (11) 3333-4444</p>
+      <p><strong>E-mail:</strong> contato@ongexemplo.org</p>
+
+      <!-- Mapa incorporado (pode ser adicionado futuramente com iframe do Google Maps) -->
+      <p><!-- Mapa será adicionado aqui futuramente --></p>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 ONG - UBM - Unidos por um Bairro Melhor - Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
