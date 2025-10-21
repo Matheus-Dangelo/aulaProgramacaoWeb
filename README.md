@@ -16,23 +16,28 @@ Desenvolver uma plataforma web completa e profissional que permita a ONG gerenci
 
 ## Estrutura do Projeto (Entrega 1)
 ```
-meu_site_ong/
+meu-projeto-ong/
 │
-├── index.html
+├── assets/
+│   ├── audio
+│   ├── docs
+│   ├── imagens/
+│   │   ├── galeria/
+│   │   │   ├── full/      ← imagens originais otimizadas
+│   │   │   └── thumbs/    ← miniaturas (thumbs)
+│   └── videos
+│    
 ├── pages/
-│   ├── sobre.html
-│   ├── projetos.html
-│   ├── voluntariado.html
-│   ├── doacoes.html
-│   ├── transparencia.html
+│   ├── blog.html
 │   ├── contato.html
-│   └── blog.html
-│
-└── assets/
-    ├── imagens/
-    ├── videos/
-    ├── audio/
-    └── docs/
+│   ├── doacoes.html
+│   ├── galeria.html
+│   ├── index.html
+│   ├── projetos.html
+│   ├── sobre.html
+│   ├── transparencia.html
+│   └── voluntariado.html
+└── README.md
 ```
 
 ---
