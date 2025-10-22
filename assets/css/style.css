@@ -1,0 +1,285 @@
+/* =====================================================
+   ONG UBM - Unidos por um Bairro Melhor
+   Design System | CSS3 Responsivo e Modular
+   Autor: Matheus Dangelo
+   ===================================================== */
+
+/* --------------------------
+  1. Variáveis do Sistema
+  -------------------------- */
+:root {
+  /* Paleta de Cores (8 cores no mínimo) */
+  --cor-primaria: #2e7d32;     /* Verde principal */
+  --cor-secundaria: #66bb6a;   /* Verde claro */
+  --cor-terciaria: #1b5e20;    /* Verde escuro */
+  --cor-destaque: #fbc02d;     /* Amarelo destaque */
+  --cor-aviso: #f57c00;        /* Laranja (alertas) */
+  --cor-erro: #d32f2f;         /* Vermelho (erros) */
+  --cor-info: #0288d1;         /* Azul (informações) */
+  --cor-fundo: #f5f5f5;        /* Fundo neutro */
+  --cor-texto: #333333;        /* Texto principal */
+  --cor-branca: #ffffff;       /* Branco padrão */
+
+  /* Tipografia Hierárquica */
+  --fonte-base: "Poppins", Arial, sans-serif;
+  --fonte-titulo: "Montserrat", sans-serif;
+
+  /* Tamanhos de fonte (escala tipográfica) */
+  --fs-xxl: 2.5rem; /* títulos principais */
+  --fs-xl: 2rem;    /* subtítulos */
+  --fs-lg: 1.5rem;  /* seções */
+  --fs-md: 1rem;    /* texto padrão */
+  --fs-sm: 0.875rem;/* texto menor */
+
+  /* Sistema de espaçamento modular */
+  --esp-1: 8px;
+  --esp-2: 16px;
+  --esp-3: 24px;
+  --esp-4: 32px;
+  --esp-5: 48px;
+  --esp-6: 64px;
+
+  /* Sistema de grid */
+  --colunas: 12;
+  --gutter: 16px;
+}
+
+/* --------------------------
+  2. Reset e Estilos Base
+  -------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-base);
+  font-size: var(--fs-md);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  line-height: 1.6;
+}
+
+/* Links e interações */
+a {
+  color: var(--cor-primaria);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+a:hover {
+  color: var(--cor-secundaria);
+}
+
+/* =====================================================
+  Estrutura principal com Grid
+  ===================================================== */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+/* Cabeçalho */
+header {
+  background-color: var(--cor-primaria);
+  color: var(--cor-branca);
+  padding: var(--esp-2);
+}
+
+/* Navegação principal */
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--esp-2);
+  list-style: none;
+  margin-top: var(--esp-2);
+}
+
+nav a {
+  color: var(--cor-branca);
+  font-weight: 600;
+  padding: var(--esp-1) var(--esp-2);
+  border-radius: 4px;
+}
+nav a:hover {
+  background-color: var(--cor-secundaria);
+}
+
+/* Conteúdo principal */
+main {
+  padding: var(--esp-4);
+}
+
+/* Rodapé */
+footer {
+  background-color: var(--cor-terciaria);
+  color: var(--cor-branca);
+  padding: var(--esp-3);
+  text-align: center;
+}
+
+/* =====================================================
+  Breakpoints Responsivos
+  ===================================================== */
+
+/* Largura máxima 1200px (notebooks) */
+@media (max-width: 1200px) {
+  main {
+    padding: var(--esp-3);
+  }
+}
+
+/* Largura máxima 992px (tablets grandes) */
+@media (max-width: 992px) {
+  header h1 {
+    font-size: var(--fs-lg);
+  }
+}
+
+/* Largura máxima 768px (tablets) */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Largura máxima 576px (smartphones) */
+@media (max-width: 576px) {
+  main {
+    padding: var(--esp-2);
+  }
+}
+
+/* Largura máxima 400px (smartphones pequenos) */
+@media (max-width: 400px) {
+  header h1 {
+    font-size: var(--fs-md);
+  }
+}
+
+/* Menu hamburguer (inicialmente oculto em telas grandes) */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+.menu-toggle span {
+  background-color: var(--cor-branca);
+  height: 3px;
+  width: 25px;
+  border-radius: 2px;
+}
+
+/* Mostrar botão e esconder menu em mobile */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+    margin: var(--esp-2) auto;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+}
+
+/* =====================================================
+  COMPONENTES DE INTERFACE
+  ===================================================== */
+
+/* Botões */
+.btn {
+  background-color: var(--cor-primaria);
+  color: var(--cor-branca);
+  padding: var(--esp-2) var(--esp-3);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: var(--fs-md);
+  transition: 0.3s;
+}
+.btn:hover { 
+  background-color: var(--cor-secundaria); 
+}
+.btn:disabled {
+  background-color: #ccc; 
+  cursor: not-allowed; 
+}
+
+/* Cards */
+.card {
+  background-color: var(--cor-branca);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: var(--esp-3);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Formulários */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-2);
+  max-width: 600px;
+  margin: auto;
+}
+
+label {
+  font-weight: 600;
+  color: var(--cor-primaria);
+}
+
+input, textarea, select {
+  padding: var(--esp-2);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: var(--fonte-base);
+}
+
+input:focus, textarea:focus {
+  outline: 2px solid var(--cor-secundaria);
+}
+
+/* ---- Feedback (alertas) ---- */
+.alert {
+  padding: var(--esp-2);
+  border-radius: 6px;
+  margin-bottom: var(--esp-2);
+  color: var(--cor-branca);
+}
+.alert-info {
+  background-color: var(--cor-info);
+}
+.alert-aviso {
+  background-color: var(--cor-aviso);
+}
+.alert-erro {
+  background-color: var(--cor-erro);
+}
+
+/* ---- Badges ---- */
+.badge {
+  display: inline-block;
+  background-color: var(--cor-secundaria);
+  color: var(--cor-branca);
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: var(--fs-sm);
+}
+
+/* =====================================================
+  Fim do arquivo style.css
+  ===================================================== */
