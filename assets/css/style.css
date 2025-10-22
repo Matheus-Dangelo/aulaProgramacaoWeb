@@ -82,29 +82,73 @@ body {
 
 /* Cabeçalho */
 header {
-  background-color: var(--cor-primaria);
-  color: var(--cor-branca);
-  padding: var(--esp-2);
+  background-color: var(--primary-color, #1a73e8);
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 4px solid var(--secondary-color, #1558b0);
+}
+/* Título da ONG */
+header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
 }
 
-/* Navegação principal */
+/* Lista de navegação */
 nav ul {
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: var(--esp-2);
-  list-style: none;
-  margin-top: var(--esp-2);
+  gap: 16px;
+  padding: 0;
+  margin: 0;
 }
 
-nav a {
-  color: var(--cor-branca);
-  font-weight: 600;
-  padding: var(--esp-1) var(--esp-2);
+/* Links principais */
+nav ul li a {
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: #fff;
+  padding: 8px 16px;
   border-radius: 4px;
+  transition: all 0.3s ease;
 }
-nav a:hover {
-  background-color: var(--cor-secundaria);
+
+/* Efeitos de interação */
+nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Página ativa */
+nav ul li a.active {
+  background-color: #fff;
+  color: var(--primary-color, #1a73e8);
+  font-weight: 600;
+  border-bottom: 3px solid var(--secondary-color, #1558b0);
+}
+
+/* Responsividade do menu */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav ul li a {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+  }
 }
 
 /* Conteúdo principal */
