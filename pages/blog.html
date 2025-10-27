@@ -20,16 +20,33 @@
   <!-- Cabeçalho -->
   <header>
     <h1>ONG UBM - Unidos por um Bairro Melhor</h1>
+
+    <!-- Botão hamburguer -->
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <nav>
-      <ul>
+      <ul class="menu">
         <li><a href="index.html">Início</a></li>
         <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
+
+        <li class="has-submenu">
+          <a href="projetos.html">Projetos</a>
+          <ul class="submenu">
+            <li><a href="projetos.html#educacao">Educação</a></li>
+            <li><a href="projetos.html#meioambiente">Meio Ambiente</a></li>
+            <li><a href="projetos.html#alimentacao">Alimentação</a></li>
+          </ul>
+        </li>
+
         <li><a href="voluntariado.html">Voluntariado</a></li>
         <li><a href="doacoes.html">Doações</a></li>
         <li><a href="galeria.html">Galeria</a></li>
         <li><a href="transparencia.html">Transparência</a></li>
-        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="blog.html">Blog</a></li>
         <li><a href="contato.html">Contato</a></li>
       </ul>
     </nav>
@@ -86,6 +103,10 @@
   <footer>
     <p>&copy; 2025 ONG UBM - Unidos por um Bairro Melhor - Todos os direitos reservados.</p>
   </footer>
+
+  <!-- Scripts do site (menu, interações, etc.) -->
+  <script src="../assets/js/script.js"></script>
+
 </body>
 
 </html>

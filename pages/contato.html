@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contato - ONG - UBM - Unidos por um Bairro Melhor</title>
-  
+
   <!-- Importa o CSS principal -->
   <link rel="stylesheet" href="../assets/css/style.css">
 
   <!-- Importa as fontes (opcional, mas recomendado) -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet">
 
 </head>
+
 <body>
   <!-- Cabeçalho -->
   <header>
     <h1>ONG UBM - Unidos por um Bairro Melhor</h1>
+
+    <!-- Botão hamburguer -->
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <nav>
-      <ul>
+      <ul class="menu">
         <li><a href="index.html">Início</a></li>
         <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
+
+        <li class="has-submenu">
+          <a href="projetos.html">Projetos</a>
+          <ul class="submenu">
+            <li><a href="projetos.html#educacao">Educação</a></li>
+            <li><a href="projetos.html#meioambiente">Meio Ambiente</a></li>
+            <li><a href="projetos.html#alimentacao">Alimentação</a></li>
+          </ul>
+        </li>
+
         <li><a href="voluntariado.html">Voluntariado</a></li>
         <li><a href="doacoes.html">Doações</a></li>
         <li><a href="galeria.html">Galeria</a></li>
         <li><a href="transparencia.html">Transparência</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li><a href="contato.html" class="active">Contato</a></li>
+        <li><a href="contato.html">Contato</a></li>
       </ul>
     </nav>
   </header>
@@ -65,7 +86,8 @@
           </select>
 
           <label for="mensagem">Mensagem:</label>
-          <textarea id="mensagem" name="mensagem" rows="6" required placeholder="Digite sua mensagem aqui..."></textarea>
+          <textarea id="mensagem" name="mensagem" rows="6" required
+            placeholder="Digite sua mensagem aqui..."></textarea>
 
           <label for="anexo">Anexar arquivo (opcional):</label>
           <input type="file" id="anexo" name="anexo" accept=".pdf,.jpg,.png,.docx">
@@ -95,5 +117,10 @@
   <footer>
     <p>&copy; 2025 ONG - UBM - Unidos por um Bairro Melhor - Todos os direitos reservados.</p>
   </footer>
+
+  <!-- Scripts do site (menu, interações, etc.) -->
+  <script src="../assets/js/script.js"></script>
+
 </body>
+
 </html>

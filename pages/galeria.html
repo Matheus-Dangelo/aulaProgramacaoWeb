@@ -1,37 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria de Projetos - ONG UBM - Unidos por um Bairro Melhor</title>
-  
-  <!-- Importa o CSS principal -->
-  <link rel="stylesheet" href="../assets/css/style.css">
 
-  <!-- Importa as fontes (opcional, mas recomendado) -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Importa o CSS principal -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+
+    <!-- Importa as fontes (opcional, mas recomendado) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
 </head>
-<body>
-  <!-- Cabeçalho -->
-  <header>
-    <h1>ONG UBM - Unidos por um Bairro Melhor</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="voluntariado.html">Voluntariado</a></li>
-        <li><a href="doacoes.html">Doações</a></li>
-        <li><a href="galeria.html" class="active">Galeria</a></li>
-        <li><a href="transparencia.html">Transparência</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- Conteúdo principal -->
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <h1>ONG UBM - Unidos por um Bairro Melhor</h1>
+
+        <!-- Botão hamburguer -->
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+
+                <li class="has-submenu">
+                    <a href="projetos.html">Projetos</a>
+                    <ul class="submenu">
+                        <li><a href="projetos.html#educacao">Educação</a></li>
+                        <li><a href="projetos.html#meioambiente">Meio Ambiente</a></li>
+                        <li><a href="projetos.html#alimentacao">Alimentação</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="voluntariado.html">Voluntariado</a></li>
+                <li><a href="doacoes.html">Doações</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="transparencia.html">Transparência</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal -->
     <main>
         <section>
             <h2>Galeria de Imagens</h2>
@@ -41,10 +62,11 @@
                 <!-- IMAGEM 1 -->
                 <figure>
                     <picture>
-                        <source srcset="../assets/imagens/galeria/thumbs/thumb_protegendo-terra-maos-aconchegando-um-globo-de-musgo.webp" type="image/webp">
+                        <source
+                            srcset="../assets/imagens/galeria/thumbs/thumb_protegendo-terra-maos-aconchegando-um-globo-de-musgo.webp"
+                            type="image/webp">
                         <img src="../assets/imagens/galeria/full/protegendo-terra-maos-aconchegando-um-globo-de-musgo.webp"
-                             alt="Mãos protegendo um globo de musgo simbolizando o cuidado com a Terra"
-                             loading="lazy">
+                            alt="Mãos protegendo um globo de musgo simbolizando o cuidado com a Terra" loading="lazy">
                     </picture>
                     <figcaption>Protegendo a Terra</figcaption>
                 </figure>
@@ -52,10 +74,12 @@
                 <!-- IMAGEM 2 -->
                 <figure>
                     <picture>
-                        <source srcset="../assets/imagens/galeria/thumbs/thumb_pessoa-idosa-e-criancas-segurando-planta.webp" type="image/webp">
+                        <source
+                            srcset="../assets/imagens/galeria/thumbs/thumb_pessoa-idosa-e-criancas-segurando-planta.webp"
+                            type="image/webp">
                         <img src="../assets/imagens/galeria/full/pessoa-idosa-e-criancas-segurando-planta.webp"
-                             alt="Pessoa idosa e crianças segurando uma planta simbolizando união entre gerações"
-                             loading="lazy">
+                            alt="Pessoa idosa e crianças segurando uma planta simbolizando união entre gerações"
+                            loading="lazy">
                     </picture>
                     <figcaption>União entre gerações</figcaption>
                 </figure>
@@ -63,10 +87,11 @@
                 <!-- IMAGEM 3 -->
                 <figure>
                     <picture>
-                        <source srcset="../assets/imagens/galeria/thumbs/thumb_maos-segurando-uma-mudinha-com-terra.webp" type="image/webp">
+                        <source
+                            srcset="../assets/imagens/galeria/thumbs/thumb_maos-segurando-uma-mudinha-com-terra.webp"
+                            type="image/webp">
                         <img src="../assets/imagens/galeria/full/maos-segurando-uma-mudinha-com-terra.webp"
-                             alt="Mãos segurando uma muda de planta com terra simbolizando esperança"
-                             loading="lazy">
+                            alt="Mãos segurando uma muda de planta com terra simbolizando esperança" loading="lazy">
                     </picture>
                     <figcaption>Esperança e Renovação</figcaption>
                 </figure>
@@ -74,10 +99,11 @@
                 <!-- IMAGEM 4 -->
                 <figure>
                     <picture>
-                        <source srcset="../assets/imagens/galeria/thumbs/thumb_composicao-de-cozimento-em-lote-plano.webp" type="image/webp">
+                        <source
+                            srcset="../assets/imagens/galeria/thumbs/thumb_composicao-de-cozimento-em-lote-plano.webp"
+                            type="image/webp">
                         <img src="../assets/imagens/galeria/full/composicao-de-cozimento-em-lote-plano.webp"
-                             alt="Distribuição de alimentos e preparo de refeições comunitárias"
-                             loading="lazy">
+                            alt="Distribuição de alimentos e preparo de refeições comunitárias" loading="lazy">
                     </picture>
                     <figcaption>Alimentação Solidária</figcaption>
                 </figure>
@@ -85,10 +111,12 @@
                 <!-- IMAGEM 5 -->
                 <figure>
                     <picture>
-                        <source srcset="../assets/imagens/galeria/thumbs/thumb_prato-de-tigela-de-buda-com-legumes-e-legumes-vista-topo.webp" type="image/webp">
+                        <source
+                            srcset="../assets/imagens/galeria/thumbs/thumb_prato-de-tigela-de-buda-com-legumes-e-legumes-vista-topo.webp"
+                            type="image/webp">
                         <img src="../assets/imagens/galeria/full/prato-de-tigela-de-buda-com-legumes-e-legumes-vista-topo.webp"
-                             alt="Prato saudável com legumes coloridos representando nutrição e bem-estar"
-                             loading="lazy">
+                            alt="Prato saudável com legumes coloridos representando nutrição e bem-estar"
+                            loading="lazy">
                     </picture>
                     <figcaption>Nutrição e Bem-Estar</figcaption>
                 </figure>
@@ -96,10 +124,12 @@
                 <!-- IMAGEM 6 -->
                 <figure>
                     <picture>
-                        <source srcset="../assets/imagens/galeria/thumbs/thumb_vista-frontal-de-livros-empilhados-um-chapeu-de-formatura-e-escadas-para-o-dia-da-educacao.webp" type="image/webp">
+                        <source
+                            srcset="../assets/imagens/galeria/thumbs/thumb_vista-frontal-de-livros-empilhados-um-chapeu-de-formatura-e-escadas-para-o-dia-da-educacao.webp"
+                            type="image/webp">
                         <img src="../assets/imagens/galeria/full/vista-frontal-de-livros-empilhados-um-chapeu-de-formatura-e-escadas-para-o-dia-da-educacao.webp"
-                             alt="Livros empilhados e chapéu de formatura representando acesso à educação"
-                             loading="lazy">
+                            alt="Livros empilhados e chapéu de formatura representando acesso à educação"
+                            loading="lazy">
                     </picture>
                     <figcaption>Educação para Todos</figcaption>
                 </figure>
@@ -107,10 +137,10 @@
                 <!-- IMAGEM 7 -->
                 <figure>
                     <picture>
-                        <source srcset="../assets/imagens/galeria/thumbs/thumb_alunos-sabendo-resposta-certa.webp" type="image/webp">
+                        <source srcset="../assets/imagens/galeria/thumbs/thumb_alunos-sabendo-resposta-certa.webp"
+                            type="image/webp">
                         <img src="../assets/imagens/galeria/full/alunos-sabendo-resposta-certa.webp"
-                             alt="Estudantes participando de atividade educacional com alegria"
-                             loading="lazy">
+                            alt="Estudantes participando de atividade educacional com alegria" loading="lazy">
                     </picture>
                     <figcaption>Educação e Alegria</figcaption>
                 </figure>
@@ -118,9 +148,14 @@
         </section>
     </main>
 
+    <!-- Rodapé -->
     <footer>
         <p>&copy; 2025 ONG UBM - Unidos por um Bairro Melhor - Todos os direitos reservados.</p>
     </footer>
 
+    <!-- Scripts do site (menu, interações, etc.) -->
+    <script src="../assets/js/script.js"></script>
+
 </body>
+
 </html>

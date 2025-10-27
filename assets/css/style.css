@@ -8,28 +8,28 @@
   1. Variáveis do Sistema
   -------------------------- */
 :root {
-  /* Paleta de Cores (8 cores no mínimo) */
-  --cor-primaria: #2e7d32;     /* Verde principal */
-  --cor-secundaria: #66bb6a;   /* Verde claro */
-  --cor-terciaria: #1b5e20;    /* Verde escuro */
-  --cor-destaque: #fbc02d;     /* Amarelo destaque */
-  --cor-aviso: #f57c00;        /* Laranja (alertas) */
-  --cor-erro: #d32f2f;         /* Vermelho (erros) */
-  --cor-info: #0288d1;         /* Azul (informações) */
-  --cor-fundo: #f5f5f5;        /* Fundo neutro */
-  --cor-texto: #333333;        /* Texto principal */
-  --cor-branca: #ffffff;       /* Branco padrão */
+  /* Paleta de Cores */
+  --cor-primaria: #2e7d32;
+  --cor-secundaria: #66bb6a;
+  --cor-terciaria: #1b5e20;
+  --cor-destaque: #fbc02d;
+  --cor-aviso: #f57c00;
+  --cor-erro: #d32f2f;
+  --cor-info: #0288d1;
+  --cor-fundo: #f5f5f5;
+  --cor-texto: #333333;
+  --cor-branca: #ffffff;
 
   /* Tipografia Hierárquica */
   --fonte-base: "Poppins", Arial, sans-serif;
   --fonte-titulo: "Montserrat", sans-serif;
 
-  /* Tamanhos de fonte (escala tipográfica) */
-  --fs-xxl: 2.5rem; /* títulos principais */
-  --fs-xl: 2rem;    /* subtítulos */
-  --fs-lg: 1.5rem;  /* seções */
-  --fs-md: 1rem;    /* texto padrão */
-  --fs-sm: 0.875rem;/* texto menor */
+  /* Tamanhos de fonte */
+  --fs-xxl: 2.5rem;
+  --fs-xl: 2rem;
+  --fs-lg: 1.5rem;
+  --fs-md: 1rem;
+  --fs-sm: 0.875rem;
 
   /* Sistema de espaçamento modular */
   --esp-1: 8px;
@@ -39,9 +39,6 @@
   --esp-5: 48px;
   --esp-6: 64px;
 
-  /* Sistema de grid */
-  --colunas: 12;
-  --gutter: 16px;
 }
 
 /* --------------------------
@@ -59,188 +56,94 @@ body {
   color: var(--cor-texto);
   background-color: var(--cor-fundo);
   line-height: 1.6;
-}
-
-/* Links e interações */
-a {
-  color: var(--cor-primaria);
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-a:hover {
-  color: var(--cor-secundaria);
-}
-
-/* =====================================================
-  Estrutura principal com Grid
-  ===================================================== */
-body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
 }
 
-/* Cabeçalho */
-header {
-  background-color: var(--primary-color, #1a73e8);
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-  border-bottom: 4px solid var(--secondary-color, #1558b0);
-}
-/* Título da ONG */
-header h1 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.8rem;
-  margin-bottom: 10px;
+a {
+  color: var(--cor-primaria);
+  text-decoration: none;
+  transition: 0.3s ease;
 }
 
-/* Lista de navegação */
+a:hover {
+  color: var(--cor-secundaria);
+}
+
+/* =====================================================
+   3. CABEÇALHO E NAVEGAÇÃO
+   ===================================================== */
+header {
+  background-color: var(--cor-primaria);
+  color: var(--cor-branca);
+  padding: var(--esp-3) var(--esp-2);
+  text-align: center;
+  border-bottom: 4px solid var(--cor-terciaria);
+}
+
+header h1 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.8rem;
+  margin-bottom: var(--esp-2);
+}
+
+/* Menu principal */
 nav ul {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 16px;
+  gap: var(--esp-2);
   padding: 0;
-  margin: 0;
 }
 
-/* Links principais */
+/* Links do menu */
 nav ul li a {
-  text-decoration: none;
-  font-family: 'Poppins', sans-serif;
   font-weight: 500;
-  color: #fff;
-  padding: 8px 16px;
-  border-radius: 4px;
+  color: var(--cor-branca);
+  padding: var(--esp-1) var(--esp-2);
+  border-radius: 6px;
   transition: all 0.3s ease;
 }
 
-/* Efeitos de interação */
 nav ul li a:hover {
   background-color: rgba(255, 255, 255, 0.15);
-  color: #fff;
   transform: translateY(-2px);
 }
 
 /* Página ativa */
 nav ul li a.active {
-  background-color: #fff;
-  color: var(--primary-color, #1a73e8);
+  background-color: var(--cor-branca);
+  color: var(--cor-primaria);
   font-weight: 600;
-  border-bottom: 3px solid var(--secondary-color, #1558b0);
+  border-bottom: 3px solid var(--cor-secundaria);
 }
 
-/* Responsividade do menu */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 1.4rem;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  nav ul li a {
-    display: block;
-    width: 100%;
-    max-width: 280px;
-  }
-}
-
-/* Conteúdo principal */
+/* =====================================================
+   4. CONTEÚDO PRINCIPAL
+   ===================================================== */
 main {
   padding: var(--esp-4);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Rodapé */
+/* =====================================================
+   5. RODAPÉ
+   ===================================================== */
 footer {
   background-color: var(--cor-terciaria);
   color: var(--cor-branca);
   padding: var(--esp-3);
   text-align: center;
+  font-size: var(--fs-sm);
 }
 
 /* =====================================================
-  Breakpoints Responsivos
-  ===================================================== */
+   6. COMPONENTES DE INTERFACE
+   ===================================================== */
 
-/* Largura máxima 1200px (notebooks) */
-@media (max-width: 1200px) {
-  main {
-    padding: var(--esp-3);
-  }
-}
-
-/* Largura máxima 992px (tablets grandes) */
-@media (max-width: 992px) {
-  header h1 {
-    font-size: var(--fs-lg);
-  }
-}
-
-/* Largura máxima 768px (tablets) */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-}
-
-/* Largura máxima 576px (smartphones) */
-@media (max-width: 576px) {
-  main {
-    padding: var(--esp-2);
-  }
-}
-
-/* Largura máxima 400px (smartphones pequenos) */
-@media (max-width: 400px) {
-  header h1 {
-    font-size: var(--fs-md);
-  }
-}
-
-/* Menu hamburguer (inicialmente oculto em telas grandes) */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-.menu-toggle span {
-  background-color: var(--cor-branca);
-  height: 3px;
-  width: 25px;
-  border-radius: 2px;
-}
-
-/* Mostrar botão e esconder menu em mobile */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
-    margin: var(--esp-2) auto;
-  }
-
-  nav ul {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav ul.active {
-    display: flex;
-  }
-}
-
-/* =====================================================
-  COMPONENTES DE INTERFACE
-  ===================================================== */
-
-/* Botões */
 .btn {
   background-color: var(--cor-primaria);
   color: var(--cor-branca);
@@ -251,12 +154,14 @@ footer {
   font-size: var(--fs-md);
   transition: 0.3s;
 }
-.btn:hover { 
-  background-color: var(--cor-secundaria); 
+
+.btn:hover {
+  background-color: var(--cor-secundaria);
 }
+
 .btn:disabled {
-  background-color: #ccc; 
-  cursor: not-allowed; 
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
 /* Cards */
@@ -265,9 +170,10 @@ footer {
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: var(--esp-3);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: 0.3s;
 }
+
 .card:hover {
   transform: translateY(-5px);
 }
@@ -286,35 +192,42 @@ label {
   color: var(--cor-primaria);
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
   padding: var(--esp-2);
   border: 1px solid #ccc;
   border-radius: 6px;
   font-family: var(--fonte-base);
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   outline: 2px solid var(--cor-secundaria);
 }
 
-/* ---- Feedback (alertas) ---- */
+/* =====================================================
+   7. ALERTAS E BADGES
+   ===================================================== */
 .alert {
   padding: var(--esp-2);
   border-radius: 6px;
   margin-bottom: var(--esp-2);
   color: var(--cor-branca);
 }
+
 .alert-info {
   background-color: var(--cor-info);
 }
+
 .alert-aviso {
   background-color: var(--cor-aviso);
 }
+
 .alert-erro {
   background-color: var(--cor-erro);
 }
 
-/* ---- Badges ---- */
 .badge {
   display: inline-block;
   background-color: var(--cor-secundaria);
@@ -322,6 +235,154 @@ input:focus, textarea:focus {
   padding: 4px 8px;
   border-radius: 12px;
   font-size: var(--fs-sm);
+}
+
+/* =====================================================
+   8. RESPONSIVIDADE (5 BREAKPOINTS)
+   ===================================================== */
+
+/* 1600px+ → Monitores grandes */
+@media (min-width: 1600px) {
+  main {
+    max-width: 1500px;
+  }
+}
+
+/* ≤1200px → Laptops */
+@media (max-width: 1200px) {
+  main {
+    padding: var(--esp-3);
+  }
+}
+
+/* ≤992px → Tablets horizontais */
+@media (max-width: 992px) {
+  header h1 {
+    font-size: var(--fs-lg);
+  }
+
+  main {
+    padding: var(--esp-3);
+  }
+}
+
+/* ≤768px → Tablets verticais e celulares grandes */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: var(--esp-1);
+  }
+
+  nav ul li a {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+}
+
+/* ≤480px → Celulares pequenos */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+  }
+
+  main {
+    padding: var(--esp-2);
+  }
+}
+
+/* ==========  MENU DROPDOWN E HAMBURGUER  ========== */
+
+/* Submenu (desktop) */
+.has-submenu {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--cor-primaria);
+  list-style: none;
+  min-width: 180px;
+  padding: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+.submenu li a {
+  display: block;
+  padding: 10px 15px;
+  color: var(--cor-branca);
+  text-decoration: none;
+}
+
+.submenu li a:hover {
+  background-color: var(--cor-secundaria);
+}
+
+.has-submenu:hover>.submenu {
+  display: block;
+}
+
+/* Menu hamburguer */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  background-color: var(--cor-branca);
+  border-radius: 2px;
+}
+
+/* Responsivo: mobile */
+@media (max-width: 768px) {
+  nav ul.menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--cor-primaria);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    padding: 15px 0;
+  }
+
+  nav ul.menu.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Submenu no mobile (abre ao clicar) */
+  .has-submenu>.submenu {
+    position: static;
+    box-shadow: none;
+  }
+
+  .has-submenu.open>.submenu {
+    display: block;
+  }
 }
 
 /* =====================================================

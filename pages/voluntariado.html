@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,19 +10,39 @@
   <link rel="stylesheet" href="../assets/css/style.css">
 
   <!-- Importa as fontes (opcional, mas recomendado) -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet">
 
 </head>
+
 <body>
   <!-- Cabeçalho -->
   <header>
     <h1>ONG UBM - Unidos por um Bairro Melhor</h1>
+
+    <!-- Botão hamburguer -->
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <nav>
-      <ul>
+      <ul class="menu">
         <li><a href="index.html">Início</a></li>
         <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="voluntariado.html" class="active">Voluntariado</a></li>
+
+        <li class="has-submenu">
+          <a href="projetos.html">Projetos</a>
+          <ul class="submenu">
+            <li><a href="projetos.html#educacao">Educação</a></li>
+            <li><a href="projetos.html#meioambiente">Meio Ambiente</a></li>
+            <li><a href="projetos.html#alimentacao">Alimentação</a></li>
+          </ul>
+        </li>
+
+        <li><a href="voluntariado.html">Voluntariado</a></li>
         <li><a href="doacoes.html">Doações</a></li>
         <li><a href="galeria.html">Galeria</a></li>
         <li><a href="transparencia.html">Transparência</a></li>
@@ -46,7 +67,8 @@
           <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
 
           <label for="cpf">CPF:</label>
-          <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Formato: 000.000.000-00" required>
+          <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+            title="Formato: 000.000.000-00" required>
           <!-- Máscara será aplicada futuramente com JS -->
 
           <label for="email">E-mail:</label>
@@ -60,7 +82,8 @@
           <input type="date" id="nascimento" name="nascimento" required>
 
           <label for="cep">CEP:</label>
-          <input type="text" id="cep" name="cep" placeholder="00000-000" pattern="\d{5}-\d{3}" title="Formato: 00000-000" required>
+          <input type="text" id="cep" name="cep" placeholder="00000-000" pattern="\d{5}-\d{3}"
+            title="Formato: 00000-000" required>
         </fieldset>
 
         <fieldset>
@@ -82,7 +105,8 @@
           </select>
 
           <label for="experiencia">Experiência prévia:</label>
-          <textarea id="experiencia" name="experiencia" rows="4" placeholder="Conte um pouco sobre sua experiência com voluntariado."></textarea>
+          <textarea id="experiencia" name="experiencia" rows="4"
+            placeholder="Conte um pouco sobre sua experiência com voluntariado."></textarea>
 
           <label for="arquivo">Anexe seu currículo (opcional):</label>
           <input type="file" id="arquivo" name="arquivo" accept=".pdf,.doc,.docx">
@@ -112,5 +136,10 @@
   <footer>
     <p>&copy; 2025 ONG - UBM - Unidos por um Bairro Melhor - Todos os direitos reservados.</p>
   </footer>
+
+  <!-- Scripts do site (menu, interações, etc.) -->
+  <script src="../assets/js/script.js"></script>
+
 </body>
+
 </html>
