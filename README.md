@@ -48,20 +48,6 @@ meu-projeto-ong/
 
 ---
 
-## Descrição das Páginas
-| Página | Descrição |
-|--------|------------|
-| `index.html` | Página inicial, apresenta a ONG e vídeo institucional. |
-| `sobre.html` | História, missão, visão e valores da ONG. |
-| `projetos.html` | Lista de projetos sociais ativos. |
-| `voluntariado.html` | Formulário de inscrição para voluntários. |
-| `doacoes.html` | Opções e formulário para doações. |
-| `transparencia.html` | Relatórios financeiros e gráficos de prestação de contas. |
-| `contato.html` | Formulário de contato institucional. |
-| `blog.html` | Notícias e formulário de newsletter. |
-
----
-
 ## Tecnologias Utilizadas
 | Categoria | Tecnologias e Recursos |
 |------------|------------------------|
