@@ -18,31 +18,47 @@ Desenvolver uma **plataforma web completa e profissional** para a ONG *UBM - Uni
 
 ## Estrutura Atual do Projeto
 ```
-meu-projeto-ong/
-│
+AULAPROGRAMACAOWEB/
 ├── assets/
-│ ├── css/
-│ │ └── style.css ← Sistema de design responsivo e modular
-│ ├── js/
-│ │ └── script.js ← Controle do menu e interações da interface
-│ ├── imagens/
-│ │ ├── galeria/
-│ │ │ ├── full/ ← Imagens originais otimizadas (.jpg, .webp)
-│ │ │ └── thumbs/ ← Miniaturas otimizadas para galeria
-│ ├── videos/ ← Vídeos institucionais (futuro)
-│ └── audio/ ← Trilhas e efeitos sonoros (futuro)
-│
+│   ├── áudio/ ← Trilhas e efeitos sonoros (futuro)
+│   │   
+│   ├── css/
+│   │   ├── style.css
+│   ├── docs/
+│   ├── imagens/
+│   │   │   ├── full/ ← Imagens originais otimizadas (.jpg, .webp)
+│   │   │   └── thumbs/ ← Miniaturas otimizadas para galeria
+│   ├── js/
+│   │   │   ├── components/
+│   │   │   │   │   ├── alertTemplate.js
+│   │   │   │   │   ├── cardTemplate.js
+│   │   │   │   │   └── tableTemplate.js
+│   │   │   ├── pages/
+│   │   │   │      ├── blog.js
+│   │   │   │      ├── contato.js
+│   │   │   │      ├── doacoes.js
+│   │   │   │      ├── index.js
+│   │   │   │      ├── projetos.js
+│   │   │   │      ├── sobre.js
+│   │   │   │      └── voluntariado.js
+│   │   │   ├── utils/
+│   │   │   │      ├── forms.js
+│   │   │   │      └── validation.js
+│   │   │   ├── main.js
+│   │   │   ├── menu.js
+│   │   │   ├── render.js
+│   │   │   ├── storage.js
+│   │   │   └── templates.js
 ├── pages/
-│ ├── index.html ← Página inicial com vídeo institucional
-│ ├── sobre.html ← Missão, visão, valores e imagens da ONG
-│ ├── projetos.html ← Projetos sociais ativos
-│ ├── voluntariado.html ← Formulário de inscrição de voluntários
-│ ├── doacoes.html ← Opções e formulário de doações
-│ ├── galeria.html ← Galeria de imagens responsiva
-│ ├── transparencia.html ← Relatórios e gráficos de prestação de contas
-│ ├── blog.html ← Notícias e assinatura de newsletter
-│ └── contato.html ← Formulário de contato institucional
-│
+│   ├── blog.html ← Notícias e assinatura de newsletter
+│   ├── contato.html ← Formulário de contato institucional
+│   ├── doacoes.html ← Opções e formulário de doações
+│   ├── galeria.html ← Galeria de imagens responsiva
+│   ├── index.html ← Página inicial com vídeo institucional
+│   ├── projetos.html ← Projetos sociais ativos
+│   ├── sobre.html ← Missão, visão, valores e imagens da ONG
+│   ├── transparencia.html ← Relatórios e gráficos de prestação de contas
+│   └── voluntariado.html ← Formulário de inscrição de voluntários
 └── README.md
 ```
 
@@ -71,11 +87,11 @@ meu-projeto-ong/
 
 ---
 
-## Próximas Etapas (Fase 3)
-1. Adicionar **gráficos e visualizações interativas** com `<canvas>` e Chart.js;  
-2. Criar **animações sutis com CSS e JS**;  
-3. Implementar **armazenamento de dados local (LocalStorage)**;  
-4. Iniciar documentação técnica com **manuais de uso e manutenção**.
+## Próximas Etapas (Fase 3) Adicionado
+1. **gráficos e visualizações interativas** com `<canvas>` e Chart.js;  
+2. **animações sutis com CSS e JS**;  
+3. **armazenamento de dados local (LocalStorage)**;  
+4. **manuais de uso e manutenção**.
 
 ---
 
