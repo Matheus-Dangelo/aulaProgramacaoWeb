@@ -1,76 +1,35 @@
+import { initForm } from "../utils/forms.js";
+
 export const VoluntariadoPage = `
-  <section>
-    <h2>Seja um Voluntário</h2>
-    <p>Preencha o formulário abaixo para se cadastrar como voluntário em nossos projetos sociais.</p>
+<section>
+  <h2>Seja um Voluntário</h2>
+  <p>Preencha o formulário abaixo para se cadastrar como voluntário.</p>
 
-    <!-- Formulário de cadastro de voluntário -->
-    <form id="form-voluntario" action="#" method="post">
-      <fieldset>
-        <legend>Dados Pessoais</legend>
+  <form id="form-voluntariado">
+    <label>Nome completo:</label>
+    <input type="text" name="nome" required>
 
-        <label for="nome">Nome completo:</label>
-        <input type="text" id="nome" name="nome" required placeholder="Digite seu nome completo">
+    <label>E-mail:</label>
+    <input type="email" name="email" required>
 
-        <label for="cpf">CPF:</label>
-        <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00"
-               pattern="\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}" title="Formato: 000.000.000-00" required>
+    <label>Telefone:</label>
+    <input type="tel" name="telefone" required>
 
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required placeholder="exemplo@dominio.com">
+    <label>Área de interesse:</label>
+    <select name="area" required>
+      <option value="">Selecione...</option>
+      <option value="educacao">Educação</option>
+      <option value="meioambiente">Meio ambiente</option>
+      <option value="alimentacao">Alimentação</option>
+      <option value="pets">Pets</option>
+    </select>
 
-        <label for="telefone">Telefone:</label>
-        <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" required>
-
-        <label for="nascimento">Data de nascimento:</label>
-        <input type="date" id="nascimento" name="nascimento" required>
-
-        <label for="cep">CEP:</label>
-        <input type="text" id="cep" name="cep" placeholder="00000-000"
-               pattern="\\d{5}-\\d{3}" title="Formato: 00000-000" required>
-      </fieldset>
-
-      <fieldset>
-        <legend>Perfil e Habilidades</legend>
-
-        <p>Selecione suas principais áreas de interesse:</p>
-        <label><input type="checkbox" name="habilidades" value="educacao"> Educação</label>
-        <label><input type="checkbox" name="habilidades" value="saude"> Pets</label>
-        <label><input type="checkbox" name="habilidades" value="alimentacao"> Alimentação</label>
-        <label><input type="checkbox" name="habilidades" value="meioambiente"> Meio Ambiente</label>
-
-        <label for="disponibilidade">Disponibilidade:</label>
-        <select id="disponibilidade" name="disponibilidade" required>
-          <option value="">Selecione...</option>
-          <option value="manhã">Manhã</option>
-          <option value="tarde">Tarde</option>
-          <option value="noite">Noite</option>
-          <option value="fimdesemana">Fins de semana</option>
-        </select>
-
-        <label for="experiencia">Experiência prévia:</label>
-        <textarea id="experiencia" name="experiencia" rows="4"
-          placeholder="Conte um pouco sobre sua experiência com voluntariado."></textarea>
-
-        <label for="arquivo">Anexe seu currículo (opcional):</label>
-        <input type="file" id="arquivo" name="arquivo" accept=".pdf,.doc,.docx">
-      </fieldset>
-
-      <p>
-        <input type="checkbox" id="termos" name="termos" required>
-        <label for="termos">Li e aceito os termos de participação.</label>
-      </p>
-
-      <button type="submit">Enviar inscrição</button>
-    </form>
-  </section>
-
-  <!-- Seção de depoimentos (áudio) -->
-  <section>
-    <h2>Depoimentos de Voluntários</h2>
-    <p>Ouça o relato de quem já participa conosco:</p>
-    <audio controls>
-      <source src="../assets/audio/depoimento1.mp3" type="audio/mpeg">
-      Seu navegador não suporta o elemento de áudio.
-    </audio>
-  </section>
+    <button type="submit">Enviar</button>
+  </form>
+</section>
 `;
+
+// Script específico da página
+export function initVoluntariado() {
+  initForm("#form-voluntariado", "voluntarios");
+}

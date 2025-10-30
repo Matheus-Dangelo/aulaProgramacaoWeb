@@ -53,64 +53,11 @@
   </header>
 
   <!-- Conteúdo principal -->
-  <main>
-    <section>
-      <h2>Entre em Contato Conosco</h2>
-      <p>Use o formulário abaixo para enviar sua mensagem à equipe da ONG - UBM.</p>
-
-      <!-- Formulário de contato -->
-      <form action="#" method="post" enctype="multipart/form-data">
-        <fieldset>
-          <legend>Informações de Contato</legend>
-
-          <label for="nome">Nome completo:</label>
-          <input type="text" id="nome" name="nome" required placeholder="Digite seu nome">
-
-          <label for="email">E-mail:</label>
-          <input type="email" id="email" name="email" required placeholder="seuemail@exemplo.com">
-
-          <label for="telefone">Telefone:</label>
-          <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
-        </fieldset>
-
-        <fieldset>
-          <legend>Mensagem</legend>
-
-          <label for="assunto">Assunto:</label>
-          <select id="assunto" name="assunto" required>
-            <option value="">Selecione...</option>
-            <option value="duvidas">Dúvidas</option>
-            <option value="parcerias">Parcerias</option>
-            <option value="doacoes">Doações</option>
-            <option value="outros">Outros</option>
-          </select>
-
-          <label for="mensagem">Mensagem:</label>
-          <textarea id="mensagem" name="mensagem" rows="6" required
-            placeholder="Digite sua mensagem aqui..."></textarea>
-
-          <label for="anexo">Anexar arquivo (opcional):</label>
-          <input type="file" id="anexo" name="anexo" accept=".pdf,.jpg,.png,.docx">
-        </fieldset>
-
-        <p>
-          <input type="checkbox" id="privacidade" name="privacidade" required>
-          <label for="privacidade">Concordo com a política de privacidade da ONG - UBM.</label>
-        </p>
-
-        <button type="submit">Enviar mensagem</button>
-      </form>
-    </section>
-
-    <section>
-      <h2>Informações Institucionais</h2>
-      <p><strong>Endereço:</strong> Rua, 10 - Belo Horizonte/MG</p>
-      <p><strong>Telefone:</strong> (31) 3333-4444</p>
-      <p><strong>E-mail:</strong> contato@ongubm.org</p>
-
-      <!-- Mapa incorporado (pode ser adicionado futuramente com iframe do Google Maps) -->
-      <p><!-- Mapa será adicionado aqui futuramente --></p>
-    </section>
+  <main id="main-content">
+    <!-- Ponto de renderização dinâmica -->
+    <div id="content">
+      <!-- O conteúdo da página (como formulário, seções, etc.) será carregado dinamicamente via JS -->
+    </div>
   </main>
 
   <!-- Rodapé -->

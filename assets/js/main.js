@@ -1,21 +1,41 @@
-// Importa as páginas (templates)
-import { VoluntariadoPage } from "./pages/voluntariado.js";
+// Importa funções de inicialização das páginas
+import { IndexPage, initIndex } from "./pages/index.js";
+import { SobrePage, initSobre } from "./pages/sobre.js";
+import { VoluntariadoPage, initVoluntariado } from "./pages/voluntariado.js";
+import { ContatoPage, initContato } from "./pages/contato.js";
+import { ProjetosPage, initProjetos } from "./pages/projetos.js";
+import { DoacoesPage, initDoacoes } from "./pages/doacoes.js";
+import { BlogPage, initBlog } from "./pages/blog.js";
 
-// Objeto que armazena as rotas da aplicação
+// Rotas e inicializações
 const routes = {
+  "/index.html": IndexPage,
+  "/sobre.html": SobrePage,
   "/voluntariado.html": VoluntariadoPage,
-  // futuras páginas:
-  // "/projetos.html": ProjetosPage,
-  // "/sobre.html": SobrePage,
+  "/contato.html": ContatoPage,
+  "/projetos.html": ProjetosPage,
+  "/doacoes.html": DoacoesPage,
+  "/blog.html": BlogPage,
 };
 
-// Função para renderizar a página
+const inits = {
+  "/index.html": initIndex,
+  "/sobre.html": initSobre,
+  "/voluntariado.html": initVoluntariado,
+  "/contato.html": initContato,
+  "/projetos.html": initProjetos,
+  "/doacoes.html": initDoacoes,
+  "/blog.html": initBlog,
+};
+
+// Renderiza conteúdo dinâmico
 function renderPage(path) {
   const content = document.getElementById("content");
   const page = routes[path];
 
   if (page) {
     content.innerHTML = page;
+    inits[path]?.(); // executa se existir
   } else {
     content.innerHTML = `
       <section>
@@ -26,35 +46,38 @@ function renderPage(path) {
   }
 }
 
-// Função para lidar com cliques nos links
+// Navegação SPA
 function handleNavigation(event) {
   const target = event.target.closest("a");
+  if (!target) return;
 
-  if (target && target.getAttribute("href")) {
-    const href = target.getAttribute("href");
+  const href = target.getAttribute("href");
+  if (href.startsWith("http") || href.startsWith("#") || !routes[href]) return;
 
-    // Impede o carregamento completo da página
-    if (href.startsWith("http")) return; // ignora links externos
-    event.preventDefault();
-
-    // Atualiza o histórico da página
-    window.history.pushState({}, "", href);
-
-    // Renderiza o conteúdo correspondente
-    renderPage(href);
-  }
+  event.preventDefault();
+  window.history.pushState({}, "", href);
+  renderPage(href);
+  setActiveLink(href);
 }
 
-// Adiciona o listener de clique no documento inteiro
+// Atualiza o menu ativo
+function setActiveLink(href) {
+  document.querySelectorAll("nav ul li a").forEach(link => {
+    link.classList.toggle("active", link.getAttribute("href") === href);
+  });
+}
+
+// Eventos globais
 document.addEventListener("click", handleNavigation);
 
-// Permite que o botão "Voltar" funcione corretamente
 window.addEventListener("popstate", () => {
-  renderPage(window.location.pathname.split("/").pop());
+  const path = "/" + window.location.pathname.split("/").pop();
+  renderPage(path);
+  setActiveLink(path);
 });
 
-// Renderiza a página inicial ao carregar
 window.addEventListener("DOMContentLoaded", () => {
   const currentPath = window.location.pathname.split("/").pop() || "index.html";
   renderPage(`/${currentPath}`);
+  setActiveLink(`/${currentPath}`);
 });
