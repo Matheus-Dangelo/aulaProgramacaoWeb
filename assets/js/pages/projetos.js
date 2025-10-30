@@ -1,97 +1,63 @@
-// =====================================================
-// Página: Projetos (SPA)
-// =====================================================
-
-import { initForm } from "../utils/forms.js";
+// =====================================
+// Página Projetos - ONG UBM
+// =====================================
 
 export const ProjetosPage = `
   <section>
-    <h2>Projetos Sociais em Andamento</h2>
-    <p>Conheça alguns dos projetos que fazem a diferença na vida de muitas pessoas.</p>
+    <h2>Nossos Projetos</h2>
+    <p>A ONG UBM atua em diversas áreas, promovendo ações sociais, ambientais e educacionais que impactam positivamente a comunidade.</p>
+  </section>
 
-    <!-- Galeria -->
-    <section>
-      <h3>Galeria de Fotos</h3>
-      <div class="galeria">
-        <picture>
-          <source srcset="../assets/imagens/thumbs/thumb_vista-frontal-de-livros-empilhados-um-chapeu-de-formatura-e-escadas-para-o-dia-da-educacao.webp" type="image/webp">
-          <img src="../assets/imagens/full/vista-frontal-de-livros-empilhados-um-chapeu-de-formatura-e-escadas-para-o-dia-da-educacao.jpg" alt="Projeto de Educação" loading="lazy">
-        </picture>
+  <section id="educacao">
+    <h2>Educação</h2>
+    <p>Oferecemos oficinas e reforço escolar para crianças e jovens, incentivando o aprendizado e o desenvolvimento pessoal.</p>
 
-        <picture>
-          <source srcset="../assets/imagens/thumbs/thumb_composicao-de-cozimento-em-lote-plano.webp" type="image/webp">
-          <img src="../assets/imagens/full/composicao-de-cozimento-em-lote-plano.jpg" alt="Projeto de Alimentação" loading="lazy">
-        </picture>
-
-        <picture>
-          <source srcset="../assets/imagens/thumbs/thumb_protegendo-terra-maos-aconchegando-um-globo-de-musgo.webp" type="image/webp">
-          <img src="../assets/imagens/full/protegendo-terra-maos-aconchegando-um-globo-de-musgo.jpg" alt="Projeto Ambiental" loading="lazy">
-        </picture>
+    <figure class="midia-container">
+      <div class="midia-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/aBcDeFg1234"
+          title="Projeto de Educação - ONG UBM"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
       </div>
-    </section>
+      <figcaption>Projeto Educação em Ação — capacitando jovens para o futuro.</figcaption>
+    </figure>
+  </section>
 
-    <!-- Formulário -->
-    <section>
-      <h2>Inscreva-se em um Projeto</h2>
-      <p>Se você deseja participar de um de nossos projetos, preencha o formulário abaixo:</p>
+  <section id="meioambiente">
+    <h2>Meio Ambiente</h2>
+    <p>Promovemos mutirões de limpeza, plantio de árvores e campanhas educativas sobre sustentabilidade e preservação.</p>
 
-      <form id="formProjetos" action="#" method="post">
-        <fieldset>
-          <legend>Informações Pessoais</legend>
+    <figure class="midia-container">
+      <div class="midia-wrapper">
+        <video controls poster="../assets/imagens/thumbs/thumb_protegendo-terra-maos-aconchegando-um-globo-de-musgo.webp">
+          <source src="../assets/videos/meio_ambiente.mp4" type="video/mp4">
+          Seu navegador não suporta vídeo.
+        </video>
+      </div>
+      <figcaption>Mutirão Verde — juntos por um bairro mais limpo e sustentável.</figcaption>
+    </figure>
+  </section>
 
-          <label for="nome">Nome completo:</label>
-          <input type="text" id="nome" name="nome" required>
+  <section id="alimentacao">
+    <h2>Alimentação</h2>
+    <p>Distribuímos cestas básicas e promovemos oficinas de culinária saudável, incentivando o aproveitamento integral dos alimentos.</p>
 
-          <label for="email">E-mail:</label>
-          <input type="email" id="email" name="email" required>
-
-          <label for="telefone">Telefone:</label>
-          <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
-        </fieldset>
-
-        <fieldset>
-          <legend>Informações do Projeto</legend>
-
-          <label for="projeto">Selecione o projeto:</label>
-          <select id="projeto" name="projeto" required>
-            <option value="">Escolha...</option>
-            <option value="educacao">Educação para Todos</option>
-            <option value="alimentacao">Alimente Esperança</option>
-            <option value="meioambiente">Verde Vivo</option>
-          </select>
-
-          <label for="motivacao">Por que deseja participar?</label>
-          <textarea id="motivacao" name="motivacao" rows="4" required></textarea>
-
-          <label for="experiencia">Possui experiência prévia?</label>
-          <textarea id="experiencia" name="experiencia" rows="3" placeholder="Descreva brevemente..."></textarea>
-        </fieldset>
-
-        <button type="submit">Enviar inscrição</button>
-      </form>
-    </section>
-
-    <!-- Vídeo -->
-    <section>
-      <h2>Vídeo Institucional</h2>
-      <video controls width="640" poster="../assets/imagens/thumb-video.jpg">
-        <source src="../assets/videos/video_institucional.mp4" type="video/mp4">
-        Seu navegador não suporta o elemento de vídeo.
-      </video>
-    </section>
-
-    <!-- Gráficos -->
-    <section>
-      <h2>Impacto dos Projetos</h2>
-      <p>Veja os resultados de nossas ações sociais:</p>
-      <canvas id="graficoRecursos" width="400" height="300">Gráfico de distribuição de recursos</canvas>
-      <canvas id="graficoVoluntarios" width="400" height="300">Gráfico de evolução de voluntários</canvas>
-      <canvas id="graficoRegioes" width="400" height="300">Gráfico de impacto por região</canvas>
-    </section>
+    <figure class="midia-container">
+      <div class="midia-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/xYz987654"
+          title="Alimentação Solidária - ONG UBM"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+      <figcaption>Alimentação Solidária — combatendo a fome com amor e solidariedade.</figcaption>
+    </figure>
   </section>
 `;
 
-// Inicialização específica
 export function initProjetos() {
-  initForm("#formProjetos", "inscricoesProjetos");
+  console.log("Página de Projetos inicializada!");
 }
