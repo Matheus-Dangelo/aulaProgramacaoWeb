@@ -1,23 +1,61 @@
-# aulaProgramacaoWeb
-# Plataforma ONG UBM - Unidos por um Bairro Melhor
+# 🌍 ONG UBM — Unidos pelo Bem do Mundo
 
-## Objetivo Geral
-Desenvolver uma **plataforma web completa e profissional** para a ONG *UBM - Unidos por um Bairro Melhor*, com foco em acessibilidade, design responsivo e engajamento social.
+> Projeto desenvolvido na disciplina **Programação Web**, com foco em acessibilidade, design responsivo e boas práticas de desenvolvimento front-end.
 
 ---
 
-## Objetivos Específicos
-- Aplicar **HTML5 semântico** para construir uma estrutura clara e acessível;
-- Criar **formulários interativos e validados** para voluntariado, doações e contato;
-- Integrar **recursos multimídia** (`video`, `audio`, `picture`) e imagens otimizadas;
-- Implementar **CSS3 modular e responsivo**, com variáveis, componentes e grid;
-- Adicionar **interatividade com JavaScript**, incluindo menu hambúrguer e dropdown;
-- Preparar o ambiente para futuras **integrações dinâmicas (API, banco de dados, etc.)**.
+## Sumário
+1. [Descrição do Projeto](#-descrição-do-projeto)
+2. [Demonstração](#-demonstração)
+3. [Tecnologias Utilizadas](#-tecnologias-utilizadas)
+4. [Estrutura do Projeto](#-estrutura-do-projeto)
+5. [Funcionalidades Principais](#-funcionalidades-principais)
+6. [Acessibilidade (WCAG 2.1 AA)](#-acessibilidade-wcag-21-aa)
+7. [Controle de Versão — GitFlow](#-controle-de-versão--gitflow)
+8. [Como Executar Localmente](#-como-executar-localmente)
+9. [Documentação Técnica](#-documentação-técnica)
+10. [Autores](#-autores)
 
 ---
 
-## Estrutura Atual do Projeto
-```
+## Descrição do Projeto
+
+O **site da ONG UBM** foi desenvolvido com o objetivo de divulgar ações sociais, ambientais e educacionais.  
+O projeto enfatiza **acessibilidade digital, responsividade e organização modular** do código, seguindo boas práticas de front-end moderno.
+
+O site é composto por páginas de:
+- **Início**
+- **Projetos**
+- **Doações**
+- **Galeria de Imagens**
+- **Contato**
+
+Cada seção apresenta conteúdo multimídia e recursos interativos voltados à inclusão e sustentabilidade.
+
+---
+
+## Demonstração
+
+ [Acesse o site da ONG UBM no GitHub Pages](https://matheus-dangelo.github.io/aulaProgramacaoWeb/)  
+*(link será válido após o deploy)*
+
+---
+
+## Tecnologias Utilizadas
+
+| Categoria | Ferramentas |
+|------------|-------------|
+| **Linguagens** | HTML5, CSS3, JavaScript (ES6 Modules) |
+| **Design & UI** | Layout responsivo com CSS Grid e Flexbox |
+| **Controle de versão** | Git + GitHub (GitFlow) |
+| **Documentação** | Markdown (`README`, `ACESSIBILIDADE_WCAG.md`, `README_GITFLOW.md`) |
+| **Otimização** | Imagens WebP, minificação de CSS e JS |
+
+---
+
+## Estrutura do Projeto
+
+
 AULAPROGRAMACAOWEB/
 ├── assets/
 │   ├── áudio/ ← Trilhas e efeitos sonoros (futuro)
@@ -58,50 +96,77 @@ AULAPROGRAMACAOWEB/
 │   ├── projetos.html ← Projetos sociais ativos
 │   ├── sobre.html ← Missão, visão, valores e imagens da ONG
 │   ├── transparencia.html ← Relatórios e gráficos de prestação de contas
-│   └── voluntariado.html ← Formulário de inscrição de voluntários
+│   ├── voluntariado.html ← Formulário de inscrição de voluntários
+├── ACESSIBILIDADE_WCAG.md
+├── README_GITFLOW.md
 └── README.md
-```
+
 
 ---
 
-## Tecnologias Utilizadas
-| Categoria | Tecnologias e Recursos |
-|------------|------------------------|
-| **Frontend** | HTML5, CSS3, JavaScript |
-| **Layout** | CSS Grid, Flexbox, variáveis CSS, design responsivo |
-| **Responsividade** | 5 breakpoints: 1200px, 992px, 768px, 576px, 400px |
-| **Interatividade** | Menu hambúrguer, submenu dropdown, transições suaves |
-| **Multimídia** | imagens otimizadas em `.jpg` e `.webp` |
-| **Componentes** | Botões, formulários, alertas, badges e cards |
-| **Acessibilidade** | Estrutura semântica e textos alternativos (`alt`) |
+## Funcionalidades Principais
 
----
-## Funcionalidades Implementadas
-- Cabeçalho fixo e menu principal responsivo  
-- Menu hambúrguer funcional no mobile  
-- Submenus dropdown com transições suaves  
-- Galeria de imagens responsiva com miniaturas otimizadas  
-- Estrutura de design modular e consistente  
-- Formulários com validação e foco em acessibilidade  
-- Paleta de cores e tipografia definida via variáveis CSS  
+✅ Navegação modular com carregamento dinâmico das páginas.  
+✅ Formulários acessíveis e validados.  
+✅ Galeria responsiva com imagens otimizadas.  
+✅ Modo de **alto contraste** e **modo escuro**.  
+✅ Multimídia acessível (vídeos, legendas e descrições).  
+✅ Design responsivo para todos os tamanhos de tela.
 
 ---
 
-## Próximas Etapas (Fase 3) Adicionado
-1. **gráficos e visualizações interativas** com `<canvas>` e Chart.js;  
-2. **animações sutis com CSS e JS**;  
-3. **armazenamento de dados local (LocalStorage)**;  
-4. **manuais de uso e manutenção**.
+## Acessibilidade (WCAG 2.1 AA)
+
+O site segue os **critérios de acessibilidade da WCAG 2.1 nível AA**, incluindo:
+
+- Navegação por teclado completa (`Tab`, `Enter`, `Espaço`);
+- Textos alternativos (`alt`, `aria-label`, `figcaption`);
+- Contraste mínimo de 4.5:1;
+- Estrutura semântica com `main`, `section`, `header`, `footer`;
+- Modo de **alto contraste** acessível.
+
+ Detalhes completos: [`ACESSIBILIDADE_WCAG.md`](./ACESSIBILIDADE_WCAG.md)
 
 ---
 
+## Controle de Versão — GitFlow
 
-## Autor
-**Matheus Dangelo**  
-Curso: *Análise e Desenvolvimento de Sistemas*  
-Disciplina: *Desenvolvimento Web - Fundamentos de HTML5, CSS3 e JavaScript*  
-Instituição: *UBM - Centro Universitário de Barra Mansa*  
-Ano: **2025**
+O repositório segue o fluxo **GitFlow**, com branches organizadas por propósito:
 
+- `main` — versão estável e pronta para produção  
+- `develop` — integração de novas funcionalidades  
+- `feature/*` — novas implementações  
+- `hotfix/*` — correções rápidas  
 
-*Este projeto é parte do aprendizado prático de desenvolvimento web, com foco em boas práticas, acessibilidade e impacto social positivo.*
+ Detalhamento: [`README_GITFLOW.md`](./README_GITFLOW.md)
+
+---
+
+## Como Executar Localmente
+
+```bash
+# Clonar o repositório
+git clone https://github.com/Matheus-Dangelo/aulaProgramacaoWeb.git
+
+# Acessar a pasta do projeto
+cd aulaProgramacaoWeb
+
+# Executar localmente (usando VSCode Live Server, por exemplo)
+
+Documentação Técnica
+
+Além deste README, o projeto contém:
+
+README_GITFLOW.md
+
+Autores
+
+Desenvolvido por:
+
+Matheus Dangelo
+GitHub @Matheus-Dangelo
+https://github.com/Matheus-Dangelo
+
+Licença
+
+Este projeto é de uso educacional e está licenciado sob a licença MIT.
