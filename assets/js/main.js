@@ -81,3 +81,37 @@ window.addEventListener("DOMContentLoaded", () => {
   renderPage(`/${currentPath}`);
   setActiveLink(`/${currentPath}`);
 });
+
+/* ===============================
+   ACESSIBILIDADE — Modo Alto Contraste + Navegação Teclado
+================================= */
+
+// Cria o botão dinamicamente (caso não exista no HTML)
+if (!document.getElementById("toggle-contraste")) {
+  const btn = document.createElement("button");
+  btn.id = "toggle-contraste";
+  btn.className = "btn-contraste";
+  btn.textContent = "Alto Contraste";
+  document.body.appendChild(btn);
+
+  btn.addEventListener("click", () => {
+    document.body.classList.toggle("alto-contraste");
+    btn.textContent = document.body.classList.contains("alto-contraste")
+      ? "Modo Padrão"
+      : "Alto Contraste";
+  });
+}
+
+// Permite navegação via teclado no menu hamburguer
+const menuToggle = document.getElementById("menu-toggle");
+if (menuToggle) {
+  menuToggle.setAttribute("tabindex", "0");
+  menuToggle.setAttribute("role", "button");
+  menuToggle.setAttribute("aria-label", "Abrir menu principal");
+
+  menuToggle.addEventListener("keypress", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      menuToggle.click();
+    }
+  });
+}

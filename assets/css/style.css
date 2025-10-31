@@ -654,6 +654,54 @@ input[type="submit"]:disabled {
   font-weight: 500;
 }
 
+/* ===============================
+   ACESSIBILIDADE
+================================= */
+
+/* Foco visível em todos os links e botões */
+a:focus, button:focus {
+  outline: 3px solid var(--cor-secundaria);
+  outline-offset: 3px;
+}
+
+/* Botão de Alto Contraste */
+.btn-contraste {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: var(--cor-secundaria);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background 0.3s;
+}
+
+.btn-contraste:hover,
+.btn-contraste:focus {
+  background: var(--cor-primaria);
+}
+
+/* Tema Alto Contraste */
+body.alto-contraste {
+  --cor-primaria: #ffffff;
+  --cor-secundaria: #000000;
+  background-color: #000;
+  color: #fff;
+}
+
+body.alto-contraste a {
+  color: #00ffff; /* Ciano para bom contraste */
+}
+
+body.alto-contraste header,
+body.alto-contraste footer {
+  background-color: #111;
+  border-color: #fff;
+}
+
 /* =====================================================
   Fim do arquivo style.css
   ===================================================== */
