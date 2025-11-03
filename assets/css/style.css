@@ -654,6 +654,60 @@ input[type="submit"]:disabled {
   font-weight: 500;
 }
 
+/* =========================
+   Acessibilidade: temas
+   ========================= */
+
+/* Botão fixo */
+.btn-contraste {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1200;
+  background: var(--cor-primaria);
+  color: var(--cor-branca);
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-contraste:focus { outline: 3px solid var(--cor-secundaria); outline-offset: 3px; }
+
+/* ALTO CONTRASTE (claro sobre escuro, foco nas cores) */
+body.alto-contraste {
+  background: #000 !important;
+  color: #FFF !important;
+}
+
+/* elementos principais em alto contraste */
+body.alto-contraste a { color: #0ff !important; } /* ciano */
+body.alto-contraste header, body.alto-contraste footer { background: #111 !important; color: #fff !important; }
+
+/* Ajuste de componentes (inputs, botões, cards) em alto contraste */
+body.alto-contraste input,
+body.alto-contraste textarea,
+body.alto-contraste select,
+body.alto-contraste button {
+  background: #000 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+
+/* MODO ESCURO (opcional separar) */
+body.modo-escuro {
+  --cor-fundo: #0e0e0e;
+  --cor-texto: #f1f1f1;
+  background-color: var(--cor-fundo) !important;
+  color: var(--cor-texto) !important;
+}
+body.modo-escuro a { color: var(--cor-primaria) !important; }
+
+/* Para garantir visibilidade do foco em qualquer modo */
+:focus { outline-offset: 3px; }
+a:focus, button:focus, input:focus, textarea:focus { outline: 3px solid var(--cor-secundaria); }
+
+
 /* =====================================================
   Fim do arquivo style.css
   ===================================================== */

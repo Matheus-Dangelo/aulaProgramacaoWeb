@@ -7,6 +7,8 @@ import { ProjetosPage, initProjetos } from "./pages/projetos.js";
 import { DoacoesPage, initDoacoes } from "./pages/doacoes.js";
 import { BlogPage, initBlog } from "./pages/blog.js";
 
+
+
 // Rotas e inicializações
 const routes = {
   "/index.html": IndexPage,
@@ -81,3 +83,95 @@ window.addEventListener("DOMContentLoaded", () => {
   renderPage(`/${currentPath}`);
   setActiveLink(`/${currentPath}`);
 });
+
+/* ===============================
+   ACESSIBILIDADE — Modo Alto Contraste + Navegação Teclado
+================================= */
+
+// Permite navegação via teclado no menu hamburguer
+const menuToggle = document.getElementById("menu-toggle");
+if (menuToggle) {
+  menuToggle.setAttribute("tabindex", "0");
+  menuToggle.setAttribute("role", "button");
+  menuToggle.setAttribute("aria-label", "Abrir menu principal");
+
+  menuToggle.addEventListener("keypress", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      menuToggle.click();
+    }
+  });
+}
+
+/* ===============================
+   ACESSIBILIDADE (botão manual)
+   - garante toggle consistente de 'alto-contraste'
+   - preserva preferência em localStorage
+   - suporta teclado (Enter/Space)
+   =============================== */
+
+(function() {
+  // Identificador do botão que usamos aqui (caso você já tenha o HTML, ele será usado;
+  // caso NÃO exista, o script cria o botão automaticamente).
+  const BTN_ID = "toggle-contraste";
+  const STORAGE_KEY = "site_alto_contraste"; // true/false
+
+  // Localiza ou cria botão
+  let btn = document.getElementById(BTN_ID);
+  if (!btn) {
+    btn = document.createElement("button");
+    btn.id = BTN_ID;
+    btn.className = "btn-contraste";
+    btn.setAttribute("aria-label", "Ativar alto contraste");
+    btn.textContent = "🌓 Acessibilidade";
+    document.body.appendChild(btn);
+  }
+
+  // Inicializa estado salvo
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved === "true") {
+    document.body.classList.add("alto-contraste");
+    btn.textContent = "☀️ Modo Padrão";
+    btn.setAttribute("aria-pressed", "true");
+  } else {
+    btn.textContent = "🌓 Acessibilidade";
+    btn.setAttribute("aria-pressed", "false");
+  }
+
+  // Função de toggle (aplica/remover classe e salva estado)
+  function toggleAltoContraste() {
+    const ativo = document.body.classList.toggle("alto-contraste");
+    localStorage.setItem(STORAGE_KEY, ativo ? "true" : "false");
+    btn.textContent = ativo ? "☀️ Modo Padrão" : "🌓 Acessibilidade";
+    btn.setAttribute("aria-pressed", ativo ? "true" : "false");
+  }
+
+  // Clique normal
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    toggleAltoContraste();
+  });
+
+  // Suporta teclado: Enter e Espaço
+  btn.setAttribute("tabindex", "0");
+  btn.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggleAltoContraste();
+    }
+  });
+
+  // Acessibilidade adicional: possibilita desativar o alto contraste com Esc quando ativo
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && document.body.classList.contains("alto-contraste")) {
+      document.body.classList.remove("alto-contraste");
+      localStorage.setItem(STORAGE_KEY, "false");
+      btn.textContent = "🌓 Acessibilidade";
+      btn.setAttribute("aria-pressed", "false");
+      btn.focus();
+    }
+  });
+
+  // (Opcional) expõe método para console debugging
+  window.__toggleAltoContraste = toggleAltoContraste;
+})();
+
