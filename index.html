@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ONG UBM - Unidos por um Bairro Melhor</title>
+
+  <!-- Importa o CSS principal -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Importa as fontes (opcional, mas recomendado) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <h1>ONG UBM - Unidos por um Bairro Melhor</h1>
+
+    <!-- Botão hamburguer -->
+    <div class="menu-toggle" id="menu-toggle" role="button" aria-label="Abrir menu principal" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="pages/sobre.html">Sobre</a></li>
+
+        <li class="has-submenu">
+          <a href="pages/projetos.html">Projetos</a>
+          <ul class="submenu">
+            <li><a href="pages/projetos.html#educacao">Educação</a></li>
+            <li><a href="pages/projetos.html#meioambiente">Meio Ambiente</a></li>
+            <li><a href="pages/projetos.html#alimentacao">Alimentação</a></li>
+          </ul>
+        </li>
+
+        <li><a href="pages/voluntariado.html">Voluntariado</a></li>
+        <li><a href="pages/doacoes.html">Doações</a></li>
+        <li><a href="pages/galeria.html">Galeria</a></li>
+        <li><a href="pages/transparencia.html">Transparência</a></li>
+        <li><a href="pages/blog.html">Blog</a></li>
+        <li><a href="pages/contato.html">Contato</a></li>
+      </ul>
+    </nav>
+    <button id="toggle-contraste" aria-label="Ativar alto contraste" class="btn-contraste">
+      🌓 Acessibilidade
+    </button>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main>
+    <section>
+      <h2>Bem-vindo à ONG UBM - Unidos por um Bairro Melhor</h2>
+      <p>Somos uma organização sem fins lucrativos dedicada a transformar vidas por meio da solidariedade e do trabalho
+        comunitário.</p>
+    </section>
+
+    <section>
+      <h2>Nossos Principais Projetos</h2>
+      <article>
+        <h3>Educação para Todos</h3>
+        <p>Oferecemos reforço escolar gratuito para crianças em situação de vulnerabilidade social.</p>
+      </article>
+
+      <article>
+        <h3>Verde Vivo</h3>
+        <p>Projeto voltado à preservação ambiental e ao plantio de árvores urbanas.</p>
+      </article>
+
+      <article>
+        <h3>Alimente Esperança</h3>
+        <p>Distribuímos cestas básicas e refeições em comunidades carentes.</p>
+      </article>
+    </section>
+
+    <!-- Vídeo institucional -->
+    <section class="midia-section">
+      <h2>Conheça Nossa História</h2>
+
+      <figure class="midia-container">
+        <div class="midia-wrapper">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Vídeo institucional da ONG UBM" allowfullscreen
+            loading="lazy">
+          </iframe>
+        </div>
+        <figcaption>Conheça o impacto dos nossos projetos na comunidade.</figcaption>
+      </figure>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 ONG UBM - Unidos por um Bairro Melhor - Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Scripts do site (menu, interações, etc.) -->
+  <script type="module" src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,713 @@
+/* =====================================================
+   ONG UBM - Unidos por um Bairro Melhor
+   Design System | CSS3 Responsivo e Modular
+   Autor: Matheus Dangelo
+   ===================================================== */
+
+/* --------------------------
+  1. Variáveis do Sistema
+  -------------------------- */
+:root {
+  /* Paleta de Cores */
+  --cor-primaria: #2e7d32;
+  --cor-secundaria: #66bb6a;
+  --cor-terciaria: #1b5e20;
+  --cor-destaque: #fbc02d;
+  --cor-aviso: #f57c00;
+  --cor-erro: #d32f2f;
+  --cor-info: #0288d1;
+  --cor-fundo: #f5f5f5;
+  --cor-texto: #333333;
+  --cor-branca: #ffffff;
+
+  /* Tipografia Hierárquica */
+  --fonte-base: "Poppins", Arial, sans-serif;
+  --fonte-titulo: "Montserrat", sans-serif;
+
+  /* Tamanhos de fonte */
+  --fs-xxl: 2.5rem;
+  --fs-xl: 2rem;
+  --fs-lg: 1.5rem;
+  --fs-md: 1rem;
+  --fs-sm: 0.875rem;
+
+  /* Sistema de espaçamento modular */
+  --esp-1: 8px;
+  --esp-2: 16px;
+  --esp-3: 24px;
+  --esp-4: 32px;
+  --esp-5: 48px;
+  --esp-6: 64px;
+
+}
+
+/* --------------------------
+  2. Reset e Estilos Base
+  -------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-base);
+  font-size: var(--fs-md);
+  color: var(--cor-texto);
+  background-color: var(--cor-fundo);
+  line-height: 1.6;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--cor-primaria);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+a:hover {
+  color: var(--cor-secundaria);
+}
+
+/* =====================================================
+   3. CABEÇALHO E NAVEGAÇÃO
+   ===================================================== */
+header {
+  background-color: var(--cor-primaria);
+  color: var(--cor-branca);
+  padding: var(--esp-3) var(--esp-2);
+  text-align: center;
+  border-bottom: 4px solid var(--cor-terciaria);
+}
+
+header h1 {
+  font-family: var(--fonte-titulo);
+  font-size: 1.8rem;
+  margin-bottom: var(--esp-2);
+}
+
+/* Menu principal */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--esp-2);
+  padding: 0;
+}
+
+/* Links do menu */
+nav ul li a {
+  font-weight: 500;
+  color: var(--cor-branca);
+  padding: var(--esp-1) var(--esp-2);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Página ativa */
+nav ul li a.active {
+  background-color: var(--cor-branca);
+  color: var(--cor-primaria);
+  font-weight: 600;
+  border-bottom: 3px solid var(--cor-secundaria);
+}
+
+
+/* ======================================================
+   BLOCO DE PADRONIZAÇÃO GLOBAL (Espaçamentos + Títulos)
+====================================================== */
+
+/* ===========================
+   Estrutura e espaçamentos
+=========================== */
+
+/* Espaçamento entre seções */
+main {
+  padding: var(--esp-4) var(--esp-2);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cada section bem espaçada e separada */
+section {
+  margin-bottom: var(--esp-5);
+  padding-bottom: var(--esp-4);
+  border-bottom: 1px solid #eee;
+}
+
+/* Última section sem borda */
+section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* ===========================
+   Títulos
+=========================== */
+h2 {
+  font-size: 1.8rem;
+  color: var(--cor-primaria);
+  margin-bottom: var(--esp-2);
+  text-align: center;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.4rem;
+  color: var(--cor-secundaria);
+  margin-top: var(--esp-3);
+  margin-bottom: var(--esp-1);
+}
+
+p, ul, li {
+  line-height: 1.6;
+  color: #333;
+}
+
+/* ===========================
+   Layout responsivo básico
+=========================== */
+@media (max-width: 768px) {
+  main {
+    padding: var(--esp-3) var(--esp-2);
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+}
+
+/* ===============================
+   GALERIA (versão unificada com cards)
+================================= */
+
+.cards-grid.galeria {
+  text-align: center;
+  padding: var(--esp-4) var(--esp-2);
+}
+
+.cards-grid.galeria p {
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto var(--esp-3);
+}
+
+/* Reuso do grid base */
+.cards-grid.galeria {
+  display: grid;
+  gap: var(--esp-3);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  justify-items: center;
+}
+
+/* Cada card de imagem */
+.cards-grid.galeria .card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 350px;
+}
+
+.cards-grid.galeria .card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.cards-grid.galeria img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cards-grid.galeria .card-content {
+  padding: var(--esp-2);
+  background-color: #f9f9f9;
+  border-top: 1px solid #eee;
+}
+
+.cards-grid.galeria .card-content h3 {
+  font-weight: 600;
+  color: var(--cor-primaria);
+  margin: 0;
+}
+
+
+/* ===============================
+   SEÇÕES MULTIMÍDIA (VÍDEOS, GRÁFICOS, ETC)
+================================= */
+
+.midia-section {
+  padding: var(--esp-4) var(--esp-2);
+  text-align: center;
+}
+
+.midia-section h2 {
+  margin-bottom: var(--esp-2);
+  color: var(--cor-primaria);
+}
+
+.midia-container {
+  max-width: 900px;
+  margin: 0 auto var(--esp-4);
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.midia-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* Mantém proporção 16:9 */
+}
+
+.midia-wrapper iframe,
+.midia-wrapper video,
+.midia-wrapper canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 12px 12px 0 0;
+}
+
+.midia-container figcaption {
+  font-size: var(--fs-sm);
+  color: #555;
+  padding: var(--esp-2);
+  background: #f9f9f9;
+  border-top: 1px solid #eee;
+}
+
+
+/* =====================================================
+   5. RODAPÉ
+   ===================================================== */
+footer {
+  background-color: var(--cor-terciaria);
+  color: var(--cor-branca);
+  padding: var(--esp-3);
+  text-align: center;
+  font-size: var(--fs-sm);
+}
+
+/* =====================================================
+   6. COMPONENTES DE INTERFACE
+   ===================================================== */
+
+.btn {
+  background-color: var(--cor-primaria);
+  color: var(--cor-branca);
+  padding: var(--esp-2) var(--esp-3);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: var(--fs-md);
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--cor-secundaria);
+}
+
+.btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Cards */
+.card {
+  background-color: var(--cor-branca);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: var(--esp-3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* ==============================
+   FORMULÁRIOS PADRONIZADOS
+============================== */
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-2);
+  max-width: 600px;
+  margin: 2rem auto;
+  background: var(--cor-branca);
+  padding: var(--esp-3);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+label {
+  font-weight: 600;
+  color: var(--cor-primaria);
+  margin-bottom: 0.25rem;
+}
+
+input,
+textarea,
+select {
+  padding: var(--esp-2);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: var(--fonte-base);
+  font-size: 1rem;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--cor-secundaria);
+  box-shadow: 0 0 4px var(--cor-secundaria);
+}
+
+/* Feedback visual */
+input.invalid,
+textarea.invalid {
+  border: 2px solid var(--cor-erro);
+  background-color: #ffe6e6;
+}
+
+.error-msg {
+  color: var(--cor-erro);
+  font-size: var(--fs-sm);
+  margin-top: 4px;
+  display: block;
+}
+
+/* Botões */
+button,
+input[type="submit"] {
+  background-color: var(--cor-primaria);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: var(--cor-secundaria);
+}
+
+button:disabled,
+input[type="submit"]:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+
+/* =====================================================
+   7. ALERTAS E BADGES
+   ===================================================== */
+.alert {
+  padding: var(--esp-2);
+  border-radius: 6px;
+  margin-bottom: var(--esp-2);
+  color: var(--cor-branca);
+}
+
+.alert-info {
+  background-color: var(--cor-info);
+}
+
+.alert-aviso {
+  background-color: var(--cor-aviso);
+}
+
+.alert-erro {
+  background-color: var(--cor-erro);
+}
+
+.badge {
+  display: inline-block;
+  background-color: var(--cor-secundaria);
+  color: var(--cor-branca);
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: var(--fs-sm);
+}
+
+/* =====================================================
+   8. RESPONSIVIDADE (5 BREAKPOINTS)
+   ===================================================== */
+
+/* 1600px+ → Monitores grandes */
+@media (min-width: 1600px) {
+  main {
+    max-width: 1500px;
+  }
+}
+
+/* ≤1200px → Laptops */
+@media (max-width: 1200px) {
+  main {
+    padding: var(--esp-3);
+  }
+}
+
+/* ≤992px → Tablets horizontais */
+@media (max-width: 992px) {
+  header h1 {
+    font-size: var(--fs-lg);
+  }
+
+  main {
+    padding: var(--esp-3);
+  }
+}
+
+/* ≤768px → Tablets verticais e celulares grandes */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: var(--esp-1);
+  }
+
+  nav ul li a {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+}
+
+/* ≤480px → Celulares pequenos */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  footer p {
+    font-size: 0.8rem;
+  }
+
+  main {
+    padding: var(--esp-2);
+  }
+}
+
+/* ==========  MENU DROPDOWN E HAMBURGUER  ========== */
+
+/* Submenu (desktop) */
+.has-submenu {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--cor-primaria);
+  list-style: none;
+  min-width: 180px;
+  padding: 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+.submenu li a {
+  display: block;
+  padding: 10px 15px;
+  color: var(--cor-branca);
+  text-decoration: none;
+}
+
+.submenu li a:hover {
+  background-color: var(--cor-secundaria);
+}
+
+.has-submenu:hover>.submenu {
+  display: block;
+}
+
+/* Menu hamburguer */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  background-color: var(--cor-branca);
+  border-radius: 2px;
+}
+
+/* Responsivo: mobile */
+@media (max-width: 768px) {
+  nav ul.menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--cor-primaria);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    padding: 15px 0;
+  }
+
+  nav ul.menu.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Submenu no mobile (abre ao clicar) */
+  .has-submenu>.submenu {
+    position: static;
+    box-shadow: none;
+  }
+
+  .has-submenu.open>.submenu {
+    display: block;
+  }
+}
+
+/* ==========================
+   Estilo - Página Sobre
+========================== */
+.sobre-imagens {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.galeria-sobre {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.galeria-sobre figure {
+  max-width: 350px;
+  flex: 1 1 300px;
+  margin: 0;
+  text-align: center;
+  background-color: var(--cor-branca);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.galeria-sobre figure:hover {
+  transform: scale(1.03);
+}
+
+.galeria-sobre img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.galeria-sobre figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--cor-primaria);
+  font-weight: 500;
+}
+
+/* =========================
+   Acessibilidade: temas
+   ========================= */
+
+/* Botão fixo */
+.btn-contraste {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1200;
+  background: var(--cor-primaria);
+  color: var(--cor-branca);
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-contraste:focus { outline: 3px solid var(--cor-secundaria); outline-offset: 3px; }
+
+/* ALTO CONTRASTE (claro sobre escuro, foco nas cores) */
+body.alto-contraste {
+  background: #000 !important;
+  color: #FFF !important;
+}
+
+/* elementos principais em alto contraste */
+body.alto-contraste a { color: #0ff !important; } /* ciano */
+body.alto-contraste header, body.alto-contraste footer { background: #111 !important; color: #fff !important; }
+
+/* Ajuste de componentes (inputs, botões, cards) em alto contraste */
+body.alto-contraste input,
+body.alto-contraste textarea,
+body.alto-contraste select,
+body.alto-contraste button {
+  background: #000 !important;
+  color: #fff !important;
+  border: 2px solid #fff !important;
+}
+
+/* MODO ESCURO (opcional separar) */
+body.modo-escuro {
+  --cor-fundo: #0e0e0e;
+  --cor-texto: #f1f1f1;
+  background-color: var(--cor-fundo) !important;
+  color: var(--cor-texto) !important;
+}
+body.modo-escuro a { color: var(--cor-primaria) !important; }
+
+/* Para garantir visibilidade do foco em qualquer modo */
+:focus { outline-offset: 3px; }
+a:focus, button:focus, input:focus, textarea:focus { outline: 3px solid var(--cor-secundaria); }
+
+
+/* =====================================================
+  Fim do arquivo style.css
+  ===================================================== */
